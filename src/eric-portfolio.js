@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Linkedin, ExternalLink, ChevronDown, Code, Smartphone, Users, Calendar } from 'lucide-react';
+import { Mail, Phone, Linkedin, ExternalLink, Code, Smartphone, Calendar, Github, FileText } from 'lucide-react';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
+
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    const el = document.getElementById(section);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const workExperience = [
     {
@@ -167,12 +175,14 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg border-b border-white/10 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-white">Eric Cerio</h1>
+            <button onClick={() => handleNavClick('about')} className="text-2xl font-bold text-white hover:text-purple-300">
+              Eric Cerio
+            </button>
             <div className="hidden md:flex space-x-8">
               {['about', 'experience', 'projects', 'skills', 'contact'].map((section) => (
                 <button
                   key={section}
-                  onClick={() => setActiveSection(section)}
+                  onClick={() => handleNavClick(section)}
                   className={`capitalize transition-all duration-300 ${
                     activeSection === section 
                       ? 'text-purple-400 border-b-2 border-purple-400' 
@@ -188,7 +198,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section id="about" className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
             <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
@@ -223,12 +233,30 @@ const Portfolio = () => {
               <Linkedin className="w-5 h-5" />
               LinkedIn Profile
             </a>
+            <a 
+              href="https://github.com/eric-cerio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-gray-600/20 hover:bg-gray-600/30 border border-gray-500/30 px-6 py-3 rounded-full text-white transition-all duration-300 hover:scale-105"
+            >
+              <Github className="w-5 h-5" />
+              GitHub
+            </a>
+            <a 
+              href="https://medium.com/@eric.cerio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 px-6 py-3 rounded-full text-white transition-all duration-300 hover:scale-105"
+            >
+              <FileText className="w-5 h-5" />
+              Medium Articles
+            </a>
           </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 px-6 bg-black/20">
+      <section id="experience" className="py-20 px-6 bg-black/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Work Experience
@@ -271,7 +299,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-6">
+      <section id="projects" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Featured Projects
@@ -321,7 +349,7 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-6 bg-black/20">
+      <section id="skills" className="py-20 px-6 bg-black/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Technical Skills
@@ -347,7 +375,7 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-6">
+      <section id="contact" className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-8">Get In Touch</h2>
           <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
