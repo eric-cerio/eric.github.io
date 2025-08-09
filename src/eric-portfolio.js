@@ -39,27 +39,110 @@ const Portfolio = () => {
         "Develop and maintain company owned products",
         "Tech: Kotlin, RxJava2, Dagger2 Injection, Data Binding, MVVM/MVP with Repository pattern"
       ]
+    },
+    {
+      title: "Android Application Developer",
+      company: "Brainhub Inc.",
+      period: "August 2015 - April 2018",
+      url: "http://www.thebrainhub.net/",
+      responsibilities: [
+        "Implemented Agile methodology",
+        "Develop and maintain company owned products",
+        "Coordinated with C++ backend team to apply native shared library (JNI)",
+        "Tech: Java, C++, MVC Architecture"
+      ]
+    },
+    {
+      title: "Android Application Developer (Freelance)",
+      company: "SkyRockIT",
+      period: "Oct 2017 - February 2018",
+      url: "#",
+      responsibilities: [
+        "Design, develop and maintain mobile applications",
+        "Tech: Java, MVP architecture, Dagger2, RxJava"
+      ]
+    },
+    {
+      title: "Android Application Developer",
+      company: "SJCLC IT Services",
+      period: "May 2015 - Aug 2016",
+      url: "#",
+      responsibilities: [
+        "Design, develop and maintain mobile applications",
+        "Test and Debug applications",
+        "Android application development",
+        "Tech: Java"
+      ]
+    },
+    {
+      title: "Android Application Developer",
+      company: "TSY Total Tech Solutions",
+      period: "May 2013 - Apr 2015",
+      url: "#",
+      responsibilities: [
+        "Design, develop and maintain web and mobile applications",
+        "Implemented web application using Code igniter framework",
+        "Full-stack development experience"
+      ]
     }
   ];
 
   const projects = [
     {
+      name: "Safe Student",
+      description: "Global SOS app connecting users to local emergency services with a single touch, featuring GPS location sharing and emergency contacts notification",
+      url: "https://play.google.com/store/apps/details?id=com.appetiser.safestudent",
+      company: "Appetiser",
+      features: ["Emergency Button", "GPS Location Sharing", "Contact Notification", "International Support"]
+    },
+    {
+      name: "Roamni",
+      description: "Audio storytelling platform for discovering, listening and sharing local stories from around the world with guided tours and monetization features",
+      url: "https://play.google.com/store/apps/details?id=com.appetiser.roamni",
+      company: "Appetiser",
+      features: ["Audio Stories", "Interactive Maps", "Local Guides", "Story Monetization"]
+    },
+    {
+      name: "HiLo",
+      description: "Authentic social media platform designed for safe sharing without judgment, creating genuine connections in a supportive environment",
+      url: "https://appetiser.com.au/portfolio/hilo/",
+      company: "Appetiser",
+      features: ["Safe Social Space", "Authentic Sharing", "Community Building", "Privacy-Focused"]
+    },
+    {
+      name: "BarbCare",
+      description: "Professional barber and salon management application",
+      url: "https://appetiser.com.au/portfolio/barbcare/",
+      company: "Appetiser",
+      features: ["Appointment Management", "Client Records", "Business Analytics"]
+    },
+    {
+      name: "Hear Mail",
+      description: "Innovative communication application",
+      url: "https://appetiser.com.au/portfolio/hear-mail-2/",
+      company: "Appetiser",
+      features: ["Voice Messages", "Audio Communication", "User-Friendly Interface"]
+    },
+    {
       name: "tindaPH",
-      description: "E-commerce marketplace application",
+      description: "E-commerce marketplace application for Filipino consumers",
       url: "https://play.google.com/store/apps/details?id=com.hinulawanlab.tindaph.tindabuyer&hl=en",
-      company: "Hinulawan Lab"
+      company: "Hinulawan Lab",
+      features: ["E-commerce Platform", "Local Marketplace", "Secure Payments"]
     },
     {
       name: "tindaPH Partner",
-      description: "Partner application for sellers",
+      description: "Partner application for sellers on the tindaPH marketplace",
       url: "https://play.google.com/store/apps/details?id=com.hinulawanlab.tindaph.tindaseller&hl=en",
-      company: "Hinulawan Lab"
+      company: "Hinulawan Lab",
+      features: ["Seller Dashboard", "Inventory Management", "Sales Analytics"]
     },
     {
       name: "Air Navigation Pro",
-      description: "Professional aviation navigation app",
+      description: "Professional aviation navigation app with advanced flight planning and navigation features",
       url: "https://play.google.com/store/apps/details?id=com.xample.airnavigation",
-      company: "Brainhub"
+      company: "Brainhub",
+      features: ["Flight Planning", "Real-time Navigation", "Aviation Charts"]
     }
   ];
 
@@ -195,23 +278,41 @@ const Portfolio = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:scale-105">
+              <div key={index} className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:scale-105 group">
                 <div className="flex items-center gap-3 mb-4">
-                  <Smartphone className="w-8 h-8 text-purple-400" />
-                  <h3 className="text-xl font-semibold text-white">{project.name}</h3>
+                  <Smartphone className="w-8 h-8 text-purple-400 group-hover:text-purple-300 transition-colors" />
+                  <h3 className="text-xl font-semibold text-white group-hover:text-purple-200 transition-colors">{project.name}</h3>
                 </div>
-                <p className="text-white/70 mb-4">{project.description}</p>
+                <p className="text-white/70 mb-4 leading-relaxed">{project.description}</p>
+                
+                {project.features && (
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.features.map((feature, featureIdx) => (
+                        <span 
+                          key={featureIdx}
+                          className="px-2 py-1 bg-purple-600/10 text-purple-300 rounded text-xs border border-purple-500/20"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-purple-300">{project.company}</span>
-                  <a 
-                    href={project.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    View App
-                  </a>
+                  <span className="text-sm text-purple-300 font-medium">{project.company}</span>
+                  {project.url !== "#" && (
+                    <a 
+                      href={project.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-white/70 hover:text-white transition-colors group-hover:text-purple-200"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      {project.url.includes('play.google.com') ? 'Play Store' : 'View Project'}
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
