@@ -64,7 +64,7 @@ const Portfolio = () => {
       title: "Android Application Developer (Freelance)",
       company: "SkyRockIT",
       period: "Oct 2017 - February 2018",
-      url: "#",
+      url: "https://www.linkedin.com/company/metaversesds/",
       responsibilities: [
         "Design, develop and maintain mobile applications",
         "Tech: Java, MVP architecture, Dagger2, RxJava"
@@ -99,14 +99,14 @@ const Portfolio = () => {
     {
       name: "Safe Student",
       description: "Global SOS app connecting users to local emergency services with a single touch, featuring GPS location sharing and emergency contacts notification",
-      url: "https://play.google.com/store/apps/details?id=com.appetiser.safestudent",
+      url: "https://appetiser.com.au/portfolio/safe-student/",
       company: "Appetiser",
       features: ["Emergency Button", "GPS Location Sharing", "Contact Notification", "International Support"]
     },
     {
       name: "Roamni",
       description: "Audio storytelling platform for discovering, listening and sharing local stories from around the world with guided tours and monetization features",
-      url: "https://play.google.com/store/apps/details?id=com.appetiser.roamni",
+      url: "https://appetiser.com.au/portfolio/roamni/",
       company: "Appetiser",
       features: ["Audio Stories", "Interactive Maps", "Local Guides", "Story Monetization"]
     },
@@ -134,14 +134,14 @@ const Portfolio = () => {
     {
       name: "tindaPH",
       description: "E-commerce marketplace application for Filipino consumers",
-      url: "https://play.google.com/store/apps/details?id=com.hinulawanlab.tindaph.tindabuyer&hl=en",
+      url: "https://appadvice.com/app/tinda-ph/1519557727",
       company: "Hinulawan Lab",
       features: ["E-commerce Platform", "Local Marketplace", "Secure Payments"]
     },
     {
       name: "tindaPH Partner",
       description: "Partner application for sellers on the tindaPH marketplace",
-      url: "https://play.google.com/store/apps/details?id=com.hinulawanlab.tindaph.tindaseller&hl=en",
+      url: "https://appadvice.com/app/tinda-seller/1519557544",
       company: "Hinulawan Lab",
       features: ["Seller Dashboard", "Inventory Management", "Sales Analytics"]
     },
@@ -160,11 +160,11 @@ const Portfolio = () => {
       "RxJava2", "Hilt", "Data Binding", "MVVM", "MVI", "Clean Architecture"
     ],
     "Tools & Libraries": [
-      "Git", "Firebase", "Retrofit", "Room Database", "Dagger2", 
-      "Glide", "PubNub", "FCM", "Bitrise", "Fastlane"
+      "Git", "Firebase", "Retrofit", "Room Database", "Dagger2/Hilt", 
+      "Glide", "PubNub", "Bitrise CI/CD", "Fastlane"
     ],
     "Other Technologies": [
-      "C++", "JNI", "HTML", "CSS", "PHP", "WordPress", 
+      "React Native", "Expo", "Tailwind CSS", "Kotlin Multi Module", "C++", "JNI", "HTML", "CSS", "Reac", "WordPress", 
       "Ubuntu", "MacOS", "Shell Scripting"
     ]
   };
